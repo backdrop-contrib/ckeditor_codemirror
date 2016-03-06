@@ -16,7 +16,7 @@ function ckeditor_codemirror_requirements($phase) {
   // Ensure translations don't break at install time.
   $t = get_t();
 
-  // If the library is installed,
+  // If the library is installed.
   if (($library = libraries_detect('ckeditor.codemirror')) && !empty($library['installed'])) {
     $return['ckeditor_codemirror_library'] = array(
       'title' => $t('CKEditor CodeMirror'),
