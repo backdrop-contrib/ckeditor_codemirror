@@ -4,5 +4,5 @@ package = User interface
 configure = admin/config/content/ckeditor
 core = 7.x
 
-dependencies[] = ckeditor
+dependencies[] = ckeditor (>=1.17)
 dependencies[] = libraries (>=2.x)
