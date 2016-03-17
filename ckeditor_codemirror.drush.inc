@@ -59,6 +59,11 @@ function drush_ckeditor_codemirror_download() {
     $path = 'sites/all/libraries';
   }
 
+  // Check whether the user wants to install the library.
+  if (!drush_confirm(dt('Do you want to install CKEditor CoreMirror plugin in @path?', array('@path' => $path)))) {
+    return drush_user_abort();
+  }
+
   // Create the directory if it does not exist.
   if (!is_dir($path)) {
     if (!drush_mkdir($path)) {
@@ -92,8 +97,13 @@ function drush_ckeditor_codemirror_download() {
   if ($file_patch = drush_download_file($url)) {
     // Remove any existing CKEditor CoreMirror plugin directory.
     if (is_dir($codemirror_dir_name)) {
-      drush_delete_dir($codemirror_dir_name, TRUE);
-      drush_log(dt('A existing CKEditor CoreMirror plugin was deleted from @path', array('@path' => $codemirror_path)), 'notice');
+      if (drush_confirm(dt('The folder "ckeditor.codemirror" in @path already exists. Do you want to delete and re-download it again?', array('@path' => $path)))) {
+        drush_delete_dir($codemirror_dir_name, TRUE);
+        drush_log(dt('A existing CKEditor CoreMirror plugin was deleted from @path.', array('@path' => $codemirror_path)), 'notice');
+      }
+      else {
+        return drush_user_abort(dt('CKEditor CoreMirror plugin is already installed.'));
+      }
     }
 
     $file_name = basename($file_patch);
