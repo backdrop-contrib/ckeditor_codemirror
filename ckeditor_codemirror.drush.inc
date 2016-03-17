@@ -48,6 +48,18 @@ function ckeditor_codemirror_drush_help($subject) {
 }
 
 /**
+ * Implements drush_MODULE_post_pm_enable().
+ *
+ * Auto-download plugin if module enabled via drush.
+ */
+function drush_ckeditor_codemirror_post_pm_enable() {
+  $modules = func_get_args();
+  if (in_array('ckeditor_codemirror', $modules)) {
+    drush_ckeditor_codemirror_download();
+  }
+}
+
+/**
  * Command to download CKEditor CoreMirror Plugin.
  */
 function drush_ckeditor_codemirror_download() {
