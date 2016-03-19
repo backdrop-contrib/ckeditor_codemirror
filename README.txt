@@ -5,6 +5,10 @@ CKEditor CodeMirror module adds syntax highlighting for "Source View" in
 CKEditor WYSIWYG editor using CodeMirror Plugin https://w8tcha.github.io/CKEdito
 r-CodeMirror-Plugin.
 
+
+INTEGRATION WITH CKEDITOR MODULE
+--------------------------------
+
 DEPENDENCIES
 ------------
 - CKEditor module https://www.drupal.org/project/ckeditor
@@ -45,3 +49,26 @@ FAQ
      config.codemirror_theme = 'ambiance';
 
      Replace "ambiance" to selected theme.
+
+
+INTEGRATION WITH WYSIWYG MODULE
+-------------------------------
+
+DEPENDENCIES
+------------
+- Wysiwyg module https://www.drupal.org/project/wysiwyg
+- CKEditor-CodeMirror-Plugin library https://github.com/w8tcha/CKEditor-CodeMir
+  ror-Plugin
+
+INSTALLATION
+------------
+1. Download and install Wysiwyg module.
+2. Download CKEditor-CodeMirror-Plugin library to the following directory
+   "sites/all/libraries/ckeditor.codemirror". Path to "plugin.js" file should be
+   "sites/all/libraries/ckeditor.codemirror/plugin.js".
+
+CONFIGURATION
+-------------
+1. Enable CKEditor editor for at least one profile on "admin/config/content/
+   wysiwyg" page.
+2. Edit Wysiwyg profile and enable "CodeMirror: Source" button.
