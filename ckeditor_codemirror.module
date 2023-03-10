@@ -67,3 +67,11 @@ function ckeditor_codemirror_ckeditor_plugin() {
     ),
   );
 }
+
+/**
+ * Implements hook_autoload_info().
+ */
+function ckeditor_codemirror_autoload_info() {
+  return array(
+  );
+}

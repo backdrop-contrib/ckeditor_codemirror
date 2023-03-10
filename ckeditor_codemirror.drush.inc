@@ -96,9 +96,9 @@ function drush_ckeditor_codemirror_download() {
   $url = CKEDITOR_CODEMIRROR_DEFAULT_DOWNLOAD_URL;
 
   // Check the latest version.
-  $response = drupal_http_request(CKEDITOR_CODEMIRROR_GITHUB_URL);
+  $response = backdrop_http_request(CKEDITOR_CODEMIRROR_GITHUB_URL);
   if ($response->code == 200) {
-    $response_data = drupal_json_decode($response->data);
+    $response_data = backdrop_json_decode($response->data);
     // Set new url.
     if (isset($response_data['assets'][0]['browser_download_url'])) {
       $url = $response_data['assets'][0]['browser_download_url'];

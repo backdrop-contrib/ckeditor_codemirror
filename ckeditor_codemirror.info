@@ -2,9 +2,9 @@ name = CKEditor CodeMirror
 description = Syntax Highlighting for the CKEditor (Source View) with the CodeMirror plugin.
 package = User interface
 configure = admin/config/content/ckeditor
-core = 7.x
+backdrop = 1.x
+type = module
 
 dependencies[] = ckeditor (>=1.17)
 dependencies[] = libraries (>=2.x)
 
-files[] = ckeditor_codemirror.test

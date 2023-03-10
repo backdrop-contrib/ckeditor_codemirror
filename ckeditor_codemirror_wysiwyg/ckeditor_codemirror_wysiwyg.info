@@ -2,6 +2,7 @@ name = CKEditor CodeMirror Wysiwyg
 description = Syntax Highlighting for the CKEditor (Source View) with the CodeMirror plugin for Wysiwyg module.
 package = User interface
 configure = admin/config/content/wysiwyg
-core = 7.x
+backdrop = 1.x
+type = module
 
 dependencies[] = wysiwyg
