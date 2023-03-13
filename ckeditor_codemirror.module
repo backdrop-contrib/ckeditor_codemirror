@@ -6,72 +6,36 @@
  */
 
 /**
- * Implements hook_libraries_info().
+ * Implements hook_library_info().
  */
-function ckeditor_codemirror_libraries_info() {
-  $libraries['ckeditor.codemirror'] = array(
-    'name' => 'CKEditor CodeMirror plugin',
-    'vendor url' => 'https://w8tcha.github.io/CKEditor-CodeMirror-Plugin',
-    'download url' => 'https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/releases',
-    'version arguments' => array(
-      'file' => 'plugin.js',
-      'pattern' => '@version:\s+[\'\"]{0,1}([0-9a-zA-Z\.-]+)[\'\"]{0,1}@',
+function ckeditor_codemirror_library_info() {
+  $path_prefix = backdrop_get_path('module', 'ckeditor_codemirror') . '/library/codemirror/';
+  $library['ckeditor.codemirror'] = array(
+    'title' => 'CKEditor CodeMirror plugin',
+    'website' => 'https://w8tcha.github.io/CKEditor-CodeMirror-Plugin',
+    'version' => '1.18.7',
+    'js' => array(
+      $path_prefix . 'plugin.js',
+      $path_prefix . 'js/codemirror.min.js',
     ),
-    'files' => array(
-      'js' => array(
-        'plugin.js',
-        'js/codemirror.min.js',
-      ),
-      'css' => array(
-        'css/codemirror.min.css',
-      ),
-    ),
-    'variants' => array(
-      'minified' => array(
-        'files' => array(
-          'js' => array(
-            'js/codemirror.min.js',
-          ),
-          'css' => array(
-            'css/codemirror.min.css',
-          ),
-        ),
-      ),
-      'source' => array(
-        'files' => array(
-          'js' => array(
-            'js/codemirror.js',
-          ),
-          'css' => array(
-            'css/codemirror.css',
-            'css/codemirror.ckeditor.css',
-          ),
-        ),
-      ),
+    'css' => array(
+      $path_prefix . 'css/codemirror.min.css',
     ),
   );
 
-  return $libraries;
+  return $library;
 }
 
 /**
- * Implements hook_ckeditor_plugin().
+ * Implements hook_ckeditor_plugins().
  */
-function ckeditor_codemirror_ckeditor_plugin() {
+function ckeditor_codemirror_ckeditor_plugins() {
+  $library_path = backdrop_get_path('module', 'ckeditor_codemirror') . '/library/codemirror';
   return array(
     'codemirror' => array(
-      'name' => 'codemirror',
-      'desc' => t('CodeMirror (Source) Syntax Highlighting. See !addon_page for more details.',
-        array('!addon_page' => l(t('addon page'), 'http://ckeditor.com/addon/codemirror'))),
-      'path' => base_path() . libraries_get_path('ckeditor.codemirror') . '/',
+      'path' => $library_path,
+      'file' => 'plugin.js',
+      'enabled callback' => TRUE,
     ),
-  );
-}
-
-/**
- * Implements hook_autoload_info().
- */
-function ckeditor_codemirror_autoload_info() {
-  return array(
   );
 }

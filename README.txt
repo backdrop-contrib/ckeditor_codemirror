@@ -2,8 +2,7 @@ INTRODUCTION
 ------------
 
 CKEditor CodeMirror module adds syntax highlighting for "Source View" in
-CKEditor WYSIWYG editor using CodeMirror Plugin https://w8tcha.github.io/CKEdito
-r-CodeMirror-Plugin.
+CKEditor WYSIWYG editor using CodeMirror Plugin https://w8tcha.github.io/CKEditor-CodeMirror-Plugin.
 
 
 INTEGRATION WITH CKEDITOR MODULE
