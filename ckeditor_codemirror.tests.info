@@ -1,6 +1,0 @@
-[CkeditorCodeMirrorBasicTest]
-name = CKEditor CodeMirror basic
-description = Test basic functionality for CKEditor CodeMirror module.
-group = CKEditor CodeMirror
-file = ckeditor_codemirror.test
-
