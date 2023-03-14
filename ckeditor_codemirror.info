@@ -5,6 +5,4 @@ configure = admin/config/content/ckeditor
 backdrop = 1.x
 type = module
 
-dependencies[] = ckeditor (>=1.17)
-dependencies[] = libraries (>=2.x)
-
+dependencies[] = ckeditor
