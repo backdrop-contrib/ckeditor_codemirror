@@ -47,3 +47,5 @@ License
 
 This project is GPL v2 software.
 See the LICENSE.txt file in this directory for complete text.
+CodeMirror library is licensed under the MIT license.
+Font Awesome is licensed under the Font Awesome Free License.
